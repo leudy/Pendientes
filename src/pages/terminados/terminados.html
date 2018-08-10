@@ -12,13 +12,13 @@
 
 </ion-header>
 
+<ion-content>
 
-<ion-content padding>
     <img src='../../assets/imgs/completados.jpg'>
 
-    <ion-list>
-        <button ion-item *ngFor="let lista of _sc.listas" (click)="Selected(lista)">{{lista.titulo}}
+    <app-lista [finish]="true"></app-lista>
 
-    </button>
-    </ion-list>
+
+
+
 </ion-content>

@@ -17,13 +17,7 @@
 
     <img src='../../assets/imgs/pendientes.jpg'>
 
-    <ion-list>
-        <button ion-item *ngFor="let lista of _sc.listas" (click)="Selected(lista)">{{lista.titulo}}
-    </button>
-
-
-    </ion-list>
-
+    <app-lista></app-lista>
     <ion-fab bottom right>
         <button ion-fab (click)="addNew()">
       <ion-icon name="add"> </ion-icon>

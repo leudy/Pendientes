@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { DeseosServices } from "../../providers/deseos/deseos";
+import { DeseosServices } from "../../providers/deseos/DeseosServices";
 import { Lista } from "../../models/index";
 import { NavController, AlertController } from "ionic-angular";
 import { AddListPage } from "../add-list/add-list";
@@ -22,9 +22,6 @@ export class PendientesPage {
     public alert: AlertController
   ) {}
 
-  Selected(lista: Lista) {
-    console.log("esta es la lista selecionada ", lista);
-  }
   addNew() {
     //this.nav.push(AddListPage);
     const forms = this.alert.create({
@@ -49,6 +46,7 @@ export class PendientesPage {
     });
     forms.present();
   }
+
   ionViewDidLoad() {
     console.log("ionViewDidLoad PendientesPage");
   }

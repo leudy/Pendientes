@@ -1,4 +1,4 @@
-import { ListaItem } from "../models/lista-item.model";
+import { ListaItem } from "./lista-item.model";
 export class Lista {
   id: Number;
   titulo: string;

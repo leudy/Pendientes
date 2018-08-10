@@ -1,0 +1,22 @@
+<ion-list>
+    <ion-item-sliding #slidingItem *ngFor="let lista of _sc.listas | completedFilter:finish">
+        <button ion-item (click)="Selected(lista)">{{lista.titulo}}
+      <ion-note item-end>
+        {{lista.Items.length}}
+      </ion-note>
+    </button>
+
+        <ion-item-options side="rigth">
+            <button (click)="editName(lista,slidingItem)" ion-only ion-button color="edit">
+        <ion-icon name="create"></ion-icon>
+
+      </button>
+        </ion-item-options>
+        <ion-item-options side="left">
+            <button (click)="DeleteList(lista)" ion-only ion-button color="danger">
+        <ion-icon name="close"></ion-icon>
+        Eliminar
+      </button>
+        </ion-item-options>
+    </ion-item-sliding>
+</ion-list>

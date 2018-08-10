@@ -14,12 +14,15 @@ import { SplashScreen } from "@ionic-native/splash-screen";
 
 import { PendientesPage } from "../pages/pendientes/pendientes";
 import { TerminadosPage } from "../pages/terminados/terminados";
-import { DeseosServices } from "../providers/deseos/deseos";
+import { DeseosServices } from "../providers/deseos/DeseosServices";
 
 //injecting modules
 import { HttpModule } from "@angular/http";
 import { HttpClientModule } from "@angular/common/http";
 import { AddListPage } from "../pages/add-list/add-list";
+import { CompletedFilterPipe } from "../pipes/completed-filter/completed-filter";
+
+import { ListaComponent } from "../components/lista/lista";
 
 @NgModule({
   declarations: [
@@ -30,7 +33,9 @@ import { AddListPage } from "../pages/add-list/add-list";
     TabsPage,
     TerminadosPage,
     PendientesPage,
-    AddListPage
+    AddListPage,
+    CompletedFilterPipe,
+    ListaComponent
   ],
   imports: [
     BrowserModule,

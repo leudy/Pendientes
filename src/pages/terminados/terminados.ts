@@ -1,7 +1,8 @@
 import { Component } from "@angular/core";
-import { NavController, NavParams } from "ionic-angular";
-import { DeseosServices } from "../../providers/deseos/deseos";
-
+import { DeseosServices } from "../../providers/deseos/DeseosServices";
+import { Lista } from "../../models/index";
+import { NavController } from "ionic-angular";
+import { AddListPage } from "../add-list/add-list";
 /**
  * Generated class for the TerminadosPage page.
  *
@@ -14,8 +15,10 @@ import { DeseosServices } from "../../providers/deseos/deseos";
   templateUrl: "terminados.html"
 })
 export class TerminadosPage {
-  constructor(public _sc: DeseosServices) {}
-  Selected(item: any) {}
+  constructor(public _sc: DeseosServices, public nav: NavController) {}
+  Selected(lista: Lista) {
+    this.nav.push(AddListPage, { titulo: lista.titulo, lista: lista });
+  }
   ionViewDidLoad() {
     console.log("ionViewDidLoad TerminadosPage");
   }
