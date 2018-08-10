@@ -1,0 +1,41 @@
+<!--
+  Generated template for the AddListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar color='primary'>
+        <ion-title>{{lista.titulo}}</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <!-- Header of list-->
+    <!-- Form Entry-->
+    <ion-list>
+        <ion-list-header>
+            Tareas por hacer
+        </ion-list-header>
+        <ion-item>
+            <ion-label floating>Nuevo item</ion-label>
+            <ion-input [(ngModel)]="NewItem" (keyup.enter)="AddNewItem()"></ion-input>
+        </ion-item>
+    </ion-list>
+    <!-- Items added to list -->
+    <ion-list *ngIf="lista!=null">
+        <ion-list-header>
+            Tareas por hacer
+        </ion-list-header>
+        <button ion-item detail-one *ngFor="let i of lista.Items" (click)="actualizarItem(i)">
+      <ion-icon *ngIf="!i.completado" name="square-outline">
+      </ion-icon>
+      <ion-icon *ngIf="i.completado" name="checkbox-outline">
+      </ion-icon>
+      {{ i.desc }}
+    </button>
+    </ion-list>
+</ion-content>
